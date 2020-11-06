@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30626.31
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenCommaAPI", "OpenCommaAPI\OpenCommaAPI.csproj", "{730C722A-3E62-45D9-A526-FC5C3D7B9CC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenCommaAPI", "src\OpenCommaAPI\OpenCommaAPI.csproj", "{730C722A-3E62-45D9-A526-FC5C3D7B9CC5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{6A17963B-2467-4B11-AAED-CDBE34D5BA57}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0BC5FCBC-A6F0-408C-97FC-C2FE81CD79FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{20C5CA5B-FC6B-45A6-9691-C109147EDC0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +24,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{730C722A-3E62-45D9-A526-FC5C3D7B9CC5} = {0BC5FCBC-A6F0-408C-97FC-C2FE81CD79FC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1E125F90-F2A5-4A92-BD6A-BA535F213A8C}
