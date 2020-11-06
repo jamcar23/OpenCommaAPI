@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using OpenCommaAPI.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,12 +27,22 @@ namespace OpenCommaAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddControllers();
-            services.AddSwaggerGen(c =>
+            services.AddControllers(o =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "OpenCommaAPI", Version = "v1" });
+                o.UseGeneralRoutePrefix("v{version:apiVersion}");
             });
+
+            services
+                .AddSwaggerGen(c =>
+                {
+                    c.SwaggerDoc("v1", new OpenApiInfo { Title = "OpenCommaAPI", Version = "v1" });
+                })
+                .AddApiVersioning(o =>
+                {
+                    o.DefaultApiVersion = new ApiVersion(1, 0);
+                    o.AssumeDefaultVersionWhenUnspecified = true;
+                    o.ReportApiVersions = true;
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
